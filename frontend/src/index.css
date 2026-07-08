@@ -1,0 +1,179 @@
+/* --- CSS VARIABLES (The Color Palette) --- */
+:root {
+  --bg-primary: #111b21;      /* Deep dark background for the whole page */
+  --bg-sidebar: #202c33;      /* Slightly lighter dark for the sidebar */
+  --bg-chat: #0b141a;         /* Darkest background for the chat area */
+  --bg-bubble-me: #005c4b;    /* Green chat bubble for your messages */
+  --bg-bubble-them: #202c33;  /* Gray chat bubble for other people's messages */
+  --text-main: #e9edef;       /* Standard white/gray text */
+  --text-muted: #8696a0;      /* Faded text for timestamps or typing indicators */
+  --accent: #00a884;          /* Brand color (WhatsApp green) for buttons and links */
+  --error: #f15c6d;           /* Red for error messages */
+}
+
+/* --- GLOBAL RESETS --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+/* --- AUTH SCREEN STYLING --- */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.auth-card {
+  background: var(--bg-sidebar);
+  padding: 2.5rem;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: var(--bg-chat);
+  border: 1px solid #374248;
+  color: var(--text-main);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.btn-toggle {
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid #374248;
+}
+.error-msg {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+/* --- CHAT BOARD STYLING --- */
+.chat-layout { 
+  display: flex; 
+  height: 100vh; 
+}
+
+/* Sidebar Layout */
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid #374248;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-header {
+  padding: 20px;
+  font-weight: bold;
+  background: var(--bg-chat);
+  border-bottom: 1px solid #374248;
+  display: flex;
+  justify-content: space-between;
+}
+.list-section {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+.room-item {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+.room-item:hover, .room-item.active { 
+  background-color: #2a3942; 
+}
+
+/* Main Chat Area */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-chat);
+}
+.chat-header {
+  padding: 15px 20px;
+  background-color: var(--bg-sidebar);
+  font-weight: bold;
+  border-bottom: 1px solid #374248;
+}
+.messages-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Message Bubbles */
+.msg {
+  max-width: 60%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+.msg.me { 
+  background-color: var(--bg-bubble-me); 
+  align-self: flex-end; 
+}
+.msg.them { 
+  background-color: var(--bg-bubble-them); 
+  align-self: flex-start; 
+}
+.msg-sender { 
+  font-size: 0.75rem; 
+  color: var(--accent); 
+  margin-bottom: 4px; 
+  font-weight: bold; 
+}
+
+.typing-indicator { 
+  padding: 5px 20px; 
+  font-style: italic; 
+  color: var(--text-muted); 
+  font-size: 0.85rem; 
+}
+
+/* Input Box Area */
+.input-area {
+  padding: 15px 20px;
+  background-color: var(--bg-sidebar);
+  display: flex;
+  gap: 10px;
+}
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  background-color: var(--bg-chat);
+  border: 1px solid #374248;
+  color: var(--text-main);
+  border-radius: 6px;
+}
