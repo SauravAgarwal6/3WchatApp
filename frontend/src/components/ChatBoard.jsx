@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import axios from 'axios';
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = "https://threewchatapp-api.onrender.com";
 
 export default function ChatBoard({ username, onLogout }) {
   const [rooms, setRooms] = useState([]);

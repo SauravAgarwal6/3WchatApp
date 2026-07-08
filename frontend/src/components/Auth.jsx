@@ -13,7 +13,7 @@ export default function Auth({ onLogin }) {
     
     try {
       const endpoint = isRegister ? "/api/auth/register" : "/api/auth/login";
-      const { data } = await axios.post(`http://localhost:5000${endpoint}`, { username, password });
+      const { data } = await axios.post(`https://threewchatapp-api.onrender.com${endpoint}`, { username, password });
       
       // Store token for future authenticated requests
       localStorage.setItem('chat_token', data.token);
